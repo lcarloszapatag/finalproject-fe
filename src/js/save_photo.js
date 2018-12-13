@@ -3,9 +3,6 @@ import 'firebase/auth'
 import 'firebase/database'
 import 'firebase/storage'
 import './config'
-import {
-  defaultCipherList
-} from 'constants';
 
 const d = document
 
