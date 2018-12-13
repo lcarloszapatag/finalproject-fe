@@ -16,3 +16,17 @@ html {
 body {
   overflow-x: hidden;
 }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--link-color);
+  transition: all .3s ease-out;
+  &:hover{
+    color: var(--link-hover-color);
+  }
+}
