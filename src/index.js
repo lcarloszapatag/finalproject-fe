@@ -10,9 +10,9 @@ import tplContact from './html/contact.tpl.html'
 import tplAdmin from './html/admin.tpl.html'
 import tplAdminAuth from './html/admin_auth.tpl.html'
 
-const  d = document,
-       main = d.querySelector('.Main'),
-       footerYear = d.querySelector('.Footer-year')
+const d = document,
+  main = d.querySelector('.Main'),
+  footerYear = d.querySelector('.Footer-year')
 
 footerYear.textContent = new Date().getFullYear()
 
@@ -21,23 +21,23 @@ d.addEventListener('DOMContentLoaded', e => {
 })
 
 d.addEventListener('click', e => {
-  if (e.target.matches( 'a[href="#"]') ){
+  if (e.target.matches('a[href="#"]')) {
     e.preventDefault()
   }
 
-  if (e.target.mathces('#home')){
+  if (e.target.matches('#home')) {
     main.innerHTML = tplHome
-  } else if (e.target.mathces('#about')){
+  } else if (e.target.matches('#about')) {
     main.innerHTML = tplAbout
-  } else if (e.target.mathces('#contact')){
+  } else if (e.target.matches('#contact')) {
     main.innerHTML = tplContact
-  } else if (e.target.mathces('#admin')){
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          main.innerHTML = tplAdminAuth
-        } else {
-          main.innerHTML = tplAdmin
-        }
-      })
-    }
+  } else if (e.target.matches('#admin')) {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        main.innerHTML = tplAdminAuth
+      } else {
+        main.innerHTML = tplAdmin
+      }
+    })
   }
+})
