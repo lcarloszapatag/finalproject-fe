@@ -5,7 +5,7 @@ const config = {
   authDomain: "proyecto-final-edteam.firebaseapp.com",
   databaseURL: "https://proyecto-final-edteam.firebaseio.com",
   projectId: "proyecto-final-edteam",
-  storageBucket: "",
+  storageBucket: "proyecto-final-edteam.appspot.com",
   messagingSenderId: "482025817687"
 }
 

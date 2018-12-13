@@ -3,6 +3,8 @@ import 'firebase/auth'
 import 'firebase/database'
 import 'firebase/storage'
 import './config'
+import { signIn, signOut } from './auth'
+import savePhoto from './save_photo'
 import tplHome from '../html/home.tpl.html'
 import tplAbout from '../html/about.tpl.html'
 import tplContact from '../html/contact.tpl.html'
@@ -34,10 +36,17 @@ const routes = () => {
       firebase.auth().onAuthStateChanged(user => {
         if (user) {
           main.innerHTML = tplAdminAuth
+          d.querySelector('.Admin-name').textContent = user.displayName
+          d.querySelector('.Admin-avatar').src = user.photoURL
+          savePhoto()
         } else {
           main.innerHTML = tplAdmin
         }
       })
+    } else if (e.target.matches('#login')){
+      signIn()
+    } else if (e.target.matches('#logout')){
+      signOut()
     }
   })
 }
